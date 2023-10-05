@@ -14,7 +14,7 @@ const botChatSchema = new Schema(
   { timestamps: true }
 );
 
-const BotChat =
-  mongoose.models.BotChat || mongoose.model("BotChat", botChatSchema);
+const BotChats =
+  mongoose.models.BotChats || mongoose.model("BotChats", botChatSchema);
 
-export default BotChat;
+export default BotChats;

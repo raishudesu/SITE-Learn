@@ -25,8 +25,8 @@ const forumCommentSchema = new Schema(
   { timestamps: true }
 );
 
-const ForumComment =
-  mongoose.models.ForumComment ||
-  mongoose.model("ForumComment", forumCommentSchema);
+const ForumComments =
+  mongoose.models.ForumComments ||
+  mongoose.model("ForumComments", forumCommentSchema);
 
-export default ForumComment;
+export default ForumComments;

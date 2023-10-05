@@ -1,14 +1,10 @@
 import mongoose, { Schema } from "mongoose";
 
-const blogSchema = new Schema(
+const forumSchema = new Schema(
   {
     title: {
       type: String,
       required: [true, "Title is required"],
-    },
-    summary: {
-      type: String,
-      required: [true, "Summary is required"],
     },
     likes: {
       type: Number,
@@ -21,6 +17,6 @@ const blogSchema = new Schema(
   { timestamps: true }
 );
 
-const Blog = mongoose.models.Blogs || mongoose.model("Blogs", blogSchema);
+const Forums = mongoose.models.Forums || mongoose.model("Forums", forumSchema);
 
-export default Blog;
+export default Forums;
