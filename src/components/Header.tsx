@@ -7,6 +7,8 @@ import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Logo from "../assets/Logo.svg";
 
 const Header = () => {
   const router = useRouter();
@@ -26,9 +28,13 @@ const Header = () => {
   return (
     <div className="w-full flex justify-center shadow-md">
       <header className="w-full max-w-screen-2xl flex justify-evenly items-center h-16">
-        <h1 className="scroll-m-20 text-2xl font-bold tracking-tight transition-colors first:mt-0">
-          SITE-Learn
-        </h1>
+        <div className="flex items-center gap-2">
+          <Image src={Logo} alt="logo" className="max-w-[30px]" />
+          <h1 className="scroll-m-20 text-2xl font-bold tracking-tight transition-colors first:mt-0">
+            SITE Learn
+          </h1>
+        </div>
+
         <NavMenu />
         <div className="flex gap-6">
           <div className={`${hideBtns()} flex gap-2 `}>

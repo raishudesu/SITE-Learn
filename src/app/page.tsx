@@ -1,9 +1,9 @@
-import { ModeToggle } from "@/components/ModeToggle";
+import HomePage from "../components/pages/HomePage";
 
 export default function Home() {
   return (
-    <div>
-      <span className="text-xl font-bold">SITE-Learn</span> <ModeToggle />
+    <div className="w-full flex justify-center">
+      <HomePage />
     </div>
   );
 }
