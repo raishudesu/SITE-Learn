@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "./Providers";
 import { Toaster } from "@/components/ui/toaster";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AuthProvider>
-            <main className="flex flex-col justify-center items-center ">
+            <main className="h-screen max-h-content">
+              <Header />
               {children}
             </main>
           </AuthProvider>

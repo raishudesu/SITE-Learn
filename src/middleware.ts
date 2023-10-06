@@ -2,4 +2,4 @@
 
 export { default } from "next-auth/middleware";
 
-export const config = { matcher: [] }; // INCLUDE PROTECTED ROUTES HERE
+export const config = { matcher: ["/dashboard"] }; // INCLUDE PROTECTED ROUTES HERE

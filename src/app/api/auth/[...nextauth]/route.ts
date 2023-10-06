@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
         pwd: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const { email, pwd } = SigninSchema.parse(credentials); //MIDDLEWARE FOR SIGN IN DATA
+        const { email, pwd } = SigninSchema.parse(credentials); //MIDDLEWARE VALIDATOR FOR SIGN IN DATA
         try {
           await connectDB();
           const user = await User.findOne({ email });
@@ -37,7 +37,7 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/", // PAGE TO REDIRECT FOR PROTECTED ROUTES
+    signIn: "/signin", // PAGE TO REDIRECT FOR PROTECTED ROUTES
   },
 };
 

@@ -112,7 +112,7 @@ const RegisterForm = () => {
         <Button type="submit">Sign up</Button>
       </form>
       <Label>
-        Have an account? <Link href={"/"}>Sign in</Link>
+        Have an account? <Link href={"/signin"}>Sign in</Link>
       </Label>
     </div>
   );
