@@ -8,7 +8,11 @@ const forumReplySchema = new Schema(
     },
     content: {
       type: String,
-      required: [true, "Content is required"],
+      required: [true, "Forum reply content is required"],
+      maxLength: [
+        2500,
+        "Forum reply content should not exceed 2500 characters long",
+      ],
     },
     likes: {
       type: Number,

@@ -8,7 +8,11 @@ const forumCommentSchema = new Schema(
     },
     content: {
       type: String,
-      required: [true, "Forum content is required"],
+      required: [true, "Forum comment content is required"],
+      maxLength: [
+        2500,
+        "Forum comment content should not exceed 2500 characters long",
+      ],
     },
     likes: {
       type: Number,
