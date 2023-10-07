@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 
 const HomePage = () => {
   return (
-    <div className="mt-16 max-w-screen-2xl h-full flex justify-center">
+    <div className="py-6 mx-auto max-w-screen-2xl px-6 flex flex-col items-center justify-center gap-24">
       <Hero />
     </div>
   );

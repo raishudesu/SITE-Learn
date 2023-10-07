@@ -26,7 +26,7 @@ const SigninForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<TSignin>({
     resolver: zodResolver(SigninSchema),
     defaultValues: {
@@ -51,8 +51,8 @@ const SigninForm = () => {
   };
 
   const formSubmit = async (data: TSignin) => {
-    const { email, pwd } = data;
     try {
+      const { email, pwd } = data;
       const res = await signIn("credentials", {
         email,
         pwd,
@@ -68,11 +68,12 @@ const SigninForm = () => {
       router.replace("dashboard");
     } catch (error) {
       console.log(error);
+    } finally {
     }
   };
 
   return (
-    <Card className="border-none shadow-md dark:shadow-slate-600">
+    <Card className="border-none shadow-md dark:shadow-slate-700">
       <CardHeader>
         <CardTitle>Sign in</CardTitle>
         <CardDescription>Enter your credentials</CardDescription>
@@ -82,22 +83,37 @@ const SigninForm = () => {
           onSubmit={handleSubmit(formSubmit)}
           className="flex flex-col gap-4 w-80"
         >
-          <Input {...register("email")} type="text" placeholder="Email" />
+          <Input
+            {...register("email")}
+            type="text"
+            placeholder="Email"
+            disabled={isSubmitting}
+          />
           {errors.email && (
             <span className="text-red-500 text-sm">{errors.email.message}</span>
           )}
-          <Input {...register("pwd")} type="password" placeholder="Password" />
+          <Input
+            {...register("pwd")}
+            type="password"
+            placeholder="Password"
+            disabled={isSubmitting}
+          />
           {errors.pwd && (
             <span className="text-red-500 text-sm">{errors.pwd.message}</span>
           )}
-          <Button type="submit">Sign in</Button>
+          <Button type="submit" disabled={isSubmitting}>
+            Sign in
+          </Button>
         </form>
       </CardContent>
       <CardFooter className="flex gap-1">
         <Label className="text-muted-foreground">
           Doesn&apos;t have an account?
         </Label>
-        <Link href={"/signup"} className="text-sm hover:underline">
+        <Link
+          href={"/signup"}
+          className="text-sm hover:underline font-semibold"
+        >
           Sign up
         </Link>
       </CardFooter>

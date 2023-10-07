@@ -28,7 +28,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AuthProvider>
-            <main className="h-screen max-h-content">
+            <main className="h-screen max-h-content overflow-hidden">
               <Header />
               {children}
             </main>

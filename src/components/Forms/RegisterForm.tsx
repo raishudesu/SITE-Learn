@@ -12,16 +12,23 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SignupSchema } from "@/lib/authSchemas";
 import { useToast } from "../ui/use-toast";
 import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 
 const RegisterForm = () => {
-  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { toast } = useToast();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<TSignup>({
     resolver: zodResolver(SignupSchema),
     defaultValues: {
@@ -49,7 +56,6 @@ const RegisterForm = () => {
 
   const formSubmit = async (data: TSignup) => {
     try {
-      setLoading(true);
       const { name, email, pwd, confirmPwd } = data;
 
       const res = await signUp(name, email, "member", pwd, confirmPwd);
@@ -62,59 +68,73 @@ const RegisterForm = () => {
       router.replace("dashboard");
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <form onSubmit={handleSubmit(formSubmit)} className="flex flex-col gap-4">
-        <Label className="text-2xl">Sign up</Label>
-        <Input
-          {...register("name")}
-          type="text"
-          placeholder="Username"
-          disabled={loading}
-        />
-        {errors.name && (
-          <span className="text-red-500 text-sm">{errors.name.message}</span>
-        )}
-        <Input
-          {...register("email")}
-          type="text"
-          placeholder="Email"
-          disabled={loading}
-        />
-        {errors.email && (
-          <span className="text-red-500 text-sm">{errors.email.message}</span>
-        )}
-        <Input
-          {...register("pwd")}
-          type="password"
-          placeholder="Password"
-          disabled={loading}
-        />
-        {errors.pwd && (
-          <span className="text-red-500 text-sm">{errors.pwd.message}</span>
-        )}
-        <Input
-          {...register("confirmPwd")}
-          type="password"
-          placeholder="Confirm password"
-          disabled={loading}
-        />
-        {errors.confirmPwd && (
-          <span className="text-red-500 text-sm">
-            {errors.confirmPwd.message}
-          </span>
-        )}
-        <Button type="submit">Sign up</Button>
-      </form>
-      <Label>
-        Have an account? <Link href={"/signin"}>Sign in</Link>
-      </Label>
-    </div>
+    <Card className="border-none shadow-md dark:shadow-slate-700">
+      <CardHeader>
+        <CardTitle>Sign up</CardTitle>
+        <CardDescription>Enter your credentials</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form
+          onSubmit={handleSubmit(formSubmit)}
+          className="flex flex-col gap-4 w-80"
+        >
+          <Input
+            {...register("name")}
+            type="text"
+            placeholder="Username"
+            disabled={isSubmitting}
+          />
+          {errors.name && (
+            <span className="text-red-500 text-sm">{errors.name.message}</span>
+          )}
+          <Input
+            {...register("email")}
+            type="text"
+            placeholder="Email"
+            disabled={isSubmitting}
+          />
+          {errors.email && (
+            <span className="text-red-500 text-sm">{errors.email.message}</span>
+          )}
+          <Input
+            {...register("pwd")}
+            type="password"
+            placeholder="Password"
+            disabled={isSubmitting}
+          />
+          {errors.pwd && (
+            <span className="text-red-500 text-sm">{errors.pwd.message}</span>
+          )}
+          <Input
+            {...register("confirmPwd")}
+            type="password"
+            placeholder="Confirm password"
+            disabled={isSubmitting}
+          />
+          {errors.confirmPwd && (
+            <span className="text-red-500 text-sm">
+              {errors.confirmPwd.message}
+            </span>
+          )}
+          <Button type="submit" disabled={isSubmitting}>
+            Sign up
+          </Button>
+        </form>
+      </CardContent>
+      <CardFooter className="flex gap-1">
+        <Label className="text-muted-foreground">Have an account?</Label>
+        <Link
+          href={"/signin"}
+          className="text-sm hover:underline font-semibold"
+        >
+          Sign in
+        </Link>
+      </CardFooter>
+    </Card>
   );
 };
 

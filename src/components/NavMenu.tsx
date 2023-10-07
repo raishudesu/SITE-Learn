@@ -17,6 +17,11 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
   {
+    title: "All Materials",
+    href: "/docs/primitives/alert-dialog",
+    description: "Access all various IT-related materials and start learning.",
+  },
+  {
     title: "Alert Dialog",
     href: "/docs/primitives/alert-dialog",
     description:
@@ -45,17 +50,11 @@ const components: { title: string; href: string; description: string }[] = [
     description:
       "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
 ];
 const NavMenu = () => {
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className="flex flex-col md:flex-row">
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -106,7 +105,7 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               AI Chat
             </NavigationMenuLink>
