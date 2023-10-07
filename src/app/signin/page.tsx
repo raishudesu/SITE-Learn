@@ -2,7 +2,7 @@ import SigninForm from "@/components/Forms/SigninForm";
 
 const Signin = () => {
   return (
-    <section className="w-full flex justify-center items-center h-4/5">
+    <section className="min-h-[80vh] w-full flex justify-center items-center">
       <div className="w-full max-w-screen-2xl flex justify-center">
         <SigninForm />
       </div>

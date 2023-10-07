@@ -10,7 +10,7 @@ const Hero = () => {
           <span className="text-5xl lg:text-7xl font-bold">
             Ask, Collaborate and Learn.
           </span>
-          <span className="text-lg md:text-xl max-w-4/5">
+          <span className="text-lg md:text-xl max-w-4/5 text-muted-foreground">
             Enhance your learning development by collaborating with other
             aspiring students and professionals.
           </span>

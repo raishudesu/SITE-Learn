@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "./Providers";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,9 +29,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AuthProvider>
-            <main className="h-screen max-h-content overflow-hidden">
+            <main className="min-h-screen overflow-hidden">
               <Header />
               {children}
+              <Footer />
             </main>
           </AuthProvider>
           <Toaster />

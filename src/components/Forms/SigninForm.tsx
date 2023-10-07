@@ -61,7 +61,7 @@ const SigninForm = () => {
 
       if (res?.error) {
         failedToast();
-        return;
+        return null;
       }
 
       successToast();

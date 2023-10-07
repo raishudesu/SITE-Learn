@@ -14,6 +14,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
+import Logo from "../assets/Logo.svg";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -65,7 +67,7 @@ const NavMenu = () => {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <Icons.logo className="h-6 w-6" />
+                    <Image src={Logo} alt="logo" className="max-w-[30px]" />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       SITE-Learn
                     </div>

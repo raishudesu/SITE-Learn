@@ -9,8 +9,8 @@ import Sidebar from "./Sidebar";
 
 const Header = () => {
   return (
-    <div className="w-full flex justify-center shadow-md">
-      <header className="w-full max-w-screen-2xl flex justify-between items-center h-16 px-2">
+    <header className=" w-full flex justify-center shadow-md">
+      <div className="w-full max-w-screen-2xl flex justify-between items-center h-16 px-2">
         <div className="flex items-center gap-2">
           <Image src={Logo} alt="logo" className="max-w-[30px]" />
           <Link
@@ -30,8 +30,8 @@ const Header = () => {
         <div className="md:hidden">
           <Sidebar />
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 };
 
