@@ -7,7 +7,10 @@ const AuthLayout = async ({ children }: { children: ReactNode }) => {
   if (session) redirect("/dashboard");
   return (
     <section className="min-h-[80vh] w-full flex justify-center items-center">
-      <div className="w-full max-w-screen-2xl flex justify-center">
+      <div className="w-full max-w-screen-2xl flex flex-col gap-8 justify-center items-center">
+        <h1 className="text-3xl text-center font-bold tracking-tight lg:text-4xl">
+          Start your learning journey.
+        </h1>
         {children}
       </div>
     </section>
