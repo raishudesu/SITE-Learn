@@ -17,7 +17,7 @@ const Community = () => {
           <span className="text-3xl lg:text-4xl font-bold">
             Join the growing community.
           </span>
-          <div className="text-muted-foreground max-w-7xl">
+          <div className="text-muted-foreground max-w-7xl text-lg">
             <span className="text-md">
               Connect with fellow students, share your insights, and grow your
               skills in a collaborative space. At{" "}

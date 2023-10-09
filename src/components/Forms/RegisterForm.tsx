@@ -80,7 +80,7 @@ const RegisterForm = () => {
       <CardContent>
         <form
           onSubmit={handleSubmit(formSubmit)}
-          className="flex flex-col gap-4 w-80"
+          className="flex flex-col gap-3 w-80"
         >
           <Input
             {...register("name")}
@@ -112,7 +112,7 @@ const RegisterForm = () => {
           <Input
             {...register("confirmPwd")}
             type="password"
-            placeholder="Confirm password"
+            placeholder="Confirm your password"
             disabled={isSubmitting}
           />
           {errors.confirmPwd && (
