@@ -21,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <meta property="og:image" content="https://imgur.com/j8RJKQu"></meta>
+      <meta
+        property="og:image"
+        content="https://i.imgur.com/j8RJKQu.png"
+      ></meta>
       <link rel="icon" type="image/svg+xml" href="../assets/Logo.svg" />
       <body className={inter.className}>
         <ThemeProvider
