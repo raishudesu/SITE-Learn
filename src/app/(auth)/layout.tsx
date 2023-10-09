@@ -1,22 +1,17 @@
-import RegisterForm from "@/components/Forms/RegisterForm";
-import { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title: "Sign up",
-};
-
-const Signup = async () => {
+const AuthLayout = async ({ children }: { children: ReactNode }) => {
   const session = await getServerSession();
   if (session) redirect("/dashboard");
   return (
     <section className="min-h-[80vh] w-full flex justify-center items-center">
       <div className="w-full max-w-screen-2xl flex justify-center">
-        <RegisterForm />
+        {children}
       </div>
     </section>
   );
 };
 
-export default Signup;
+export default AuthLayout;
