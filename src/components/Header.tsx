@@ -6,9 +6,9 @@ import Logo from "../assets/Logo.svg";
 import AuthBtns from "./AuthBtns";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
-import SignoutBtn from "./SignoutBtn";
+import UserDropdown from "./UserDropdown";
 
-const Header = () => {
+const Header = async () => {
   return (
     <header className="bg-background w-full flex justify-center shadow-md">
       <div className="w-full max-w-screen-2xl flex justify-between items-center h-16 px-2">
@@ -24,13 +24,15 @@ const Header = () => {
         <div className="hidden md:block">
           <NavMenu />
         </div>
-        <div className="hidden md:flex gap-6">
-          <AuthBtns />
-          <SignoutBtn />
-          <ModeToggle />
-        </div>
-        <div className="md:hidden">
-          <Sidebar />
+        <div className="flex gap-2">
+          <UserDropdown />
+          <div className="hidden md:flex gap-6">
+            <AuthBtns />
+            <ModeToggle />
+          </div>
+          <div className="md:hidden">
+            <Sidebar />
+          </div>
         </div>
       </div>
     </header>

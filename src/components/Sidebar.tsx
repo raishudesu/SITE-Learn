@@ -27,7 +27,6 @@ const Sidebar = () => {
         <div className="mt-6 flex flex-col justify-center items-center gap-2">
           <SideNavMenu />
           <AuthBtns />
-          <SignoutBtn />
           <ModeToggle />
         </div>
       </SheetContent>

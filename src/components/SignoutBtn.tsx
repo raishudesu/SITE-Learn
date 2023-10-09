@@ -26,9 +26,9 @@ const SignoutBtn = () => {
   };
 
   return (
-    <Button onClick={handleSignout} className={hideBtn()}>
+    <span onClick={handleSignout} className={hideBtn()}>
       Sign out
-    </Button>
+    </span>
   );
 };
 

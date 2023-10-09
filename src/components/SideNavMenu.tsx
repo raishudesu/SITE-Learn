@@ -17,28 +17,28 @@ const SideNavMenu = () => {
     <NavigationMenu>
       <NavigationMenuList className="flex flex-col">
         <NavigationMenuItem>
-          <Link href="" legacyBehavior passHref>
+          <Link href="/blogs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Blogs
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="" legacyBehavior passHref>
+          <Link href="/forums" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Forums
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="" legacyBehavior passHref>
+          <Link href="/materials" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Materials
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="" legacyBehavior passHref>
+          <Link href="/ai-chat" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               AI Chat
             </NavigationMenuLink>

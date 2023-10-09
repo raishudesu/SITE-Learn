@@ -7,9 +7,9 @@ const HeroBtns = () => {
   const router = useRouter();
   return (
     <div className="flex gap-4">
-      <Button>Get started</Button>
-      <Button variant="outline" onClick={() => router.replace("signup")}>
-        Register
+      <Button onClick={() => router.replace("signup")}>Get started</Button>
+      <Button variant="outline" onClick={() => router.replace("blogs")}>
+        Blogs
       </Button>
     </div>
   );
