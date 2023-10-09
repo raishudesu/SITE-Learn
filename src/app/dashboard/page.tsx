@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Dashboard",
 };
 
-const Dashboard = () => {
+const Dashboard = async () => {
   return <section className="h-screen">You are authenticated</section>;
 };
 
