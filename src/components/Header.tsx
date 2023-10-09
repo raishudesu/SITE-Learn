@@ -10,7 +10,7 @@ import SignoutBtn from "./SignoutBtn";
 
 const Header = () => {
   return (
-    <header className=" w-full flex justify-center shadow-md">
+    <header className="bg-background w-full flex justify-center shadow-md">
       <div className="w-full max-w-screen-2xl flex justify-between items-center h-16 px-2">
         <div className="flex items-center gap-2">
           <Image src={Logo} alt="logo" className="max-w-[30px]" />
