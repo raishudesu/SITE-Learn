@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SITE-Learn",
-  description: "Enhanced learning community",
+  description: "Ask, Collaborate, and Learn",
 };
 
 export default function RootLayout({
