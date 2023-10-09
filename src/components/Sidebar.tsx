@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -11,6 +10,7 @@ import { Menu } from "lucide-react";
 import AuthBtns from "./AuthBtns";
 import { ModeToggle } from "./ModeToggle";
 import SideNavMenu from "./SideNavMenu";
+import SignoutBtn from "./SignoutBtn";
 
 const Sidebar = () => {
   return (
@@ -27,6 +27,7 @@ const Sidebar = () => {
         <div className="mt-6 flex flex-col justify-center items-center gap-2">
           <SideNavMenu />
           <AuthBtns />
+          <SignoutBtn />
           <ModeToggle />
         </div>
       </SheetContent>

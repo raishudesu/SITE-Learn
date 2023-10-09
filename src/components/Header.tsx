@@ -6,6 +6,7 @@ import Logo from "../assets/Logo.svg";
 import AuthBtns from "./AuthBtns";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
+import SignoutBtn from "./SignoutBtn";
 
 const Header = () => {
   return (
@@ -25,6 +26,7 @@ const Header = () => {
         </div>
         <div className="hidden md:flex gap-6">
           <AuthBtns />
+          <SignoutBtn />
           <ModeToggle />
         </div>
         <div className="md:hidden">

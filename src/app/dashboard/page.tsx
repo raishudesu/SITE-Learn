@@ -1,11 +1,11 @@
-import SignoutBtn from "@/components/SignoutBtn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 const Dashboard = () => {
-  return (
-    <div>
-      You are authenticated <SignoutBtn />
-    </div>
-  );
+  return <section className="h-screen">You are authenticated</section>;
 };
 
 export default Dashboard;

@@ -2,10 +2,34 @@
 
 import React from "react";
 import { Button } from "./ui/button";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+import { toast } from "./ui/use-toast";
 
 const SignoutBtn = () => {
-  return <Button onClick={() => signOut()}>Sign out</Button>;
+  const { status } = useSession();
+
+  const hideBtn = () => {
+    if (status !== "authenticated") {
+      return "hidden";
+    }
+  };
+
+  const successToast = () => {
+    toast({
+      title: "Logged out",
+    });
+  };
+
+  const handleSignout = () => {
+    signOut();
+    successToast();
+  };
+
+  return (
+    <Button onClick={handleSignout} className={hideBtn()}>
+      Sign out
+    </Button>
+  );
 };
 
 export default SignoutBtn;
