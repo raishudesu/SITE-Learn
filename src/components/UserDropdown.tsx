@@ -1,6 +1,6 @@
 "use client";
 
-import { LogOut, Settings, User } from "lucide-react";
+import { Settings, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -27,23 +27,26 @@ const UserDropdown = () => {
           <AvatarIcon />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+      <DropdownMenuContent className="px-2 max-w-56">
+        <DropdownMenuLabel className="text-lg">My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <User className="mr-2 h-4 w-4" />
-            <Link href={"/profile"}>Profile</Link>
+            <Link href={"/dashboard"} className="w-full flex items-center">
+              <User className="mr-2 h-4 w-4" />
+              Dashboard
+            </Link>
           </DropdownMenuItem>
 
           <DropdownMenuItem>
-            <Settings className="mr-2 h-4 w-4" />
-            <Link href={"/settings"}>Settings</Link>
+            <Link href={"/settings"} className="w-full flex items-center">
+              <Settings className="mr-2 h-4 w-4" />
+              Settings
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <LogOut className="mr-2 h-4 w-4" />
           <SignoutBtn />
         </DropdownMenuItem>
       </DropdownMenuContent>

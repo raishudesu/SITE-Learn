@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Button } from "./ui/button";
 import { signOut, useSession } from "next-auth/react";
 import { toast } from "./ui/use-toast";
+import { LogOut } from "lucide-react";
 
 const SignoutBtn = () => {
   const { status } = useSession();
@@ -26,7 +26,11 @@ const SignoutBtn = () => {
   };
 
   return (
-    <span onClick={handleSignout} className={hideBtn()}>
+    <span
+      onClick={handleSignout}
+      className={`${hideBtn()} flex items-center cursor-pointer`}
+    >
+      <LogOut className="mr-2 h-4 w-4" />
       Sign out
     </span>
   );
