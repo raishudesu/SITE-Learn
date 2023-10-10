@@ -1,5 +1,3 @@
-"use client";
-
 import { Settings, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,15 +9,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useSession } from "next-auth/react";
 import AvatarIcon from "./Avatar";
 import SignoutBtn from "./SignoutBtn";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
 
-const UserDropdown = () => {
-  const { status } = useSession();
+const UserDropdown = async () => {
+  const session = await getServerSession();
 
-  if (status !== "authenticated") return null;
+  if (!session) return null;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
