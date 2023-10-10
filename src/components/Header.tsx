@@ -3,12 +3,12 @@ import NavMenu from "./NavMenu";
 import { ModeToggle } from "./ModeToggle";
 import Image from "next/image";
 import Logo from "../assets/Logo.svg";
-import AuthBtns from "./AuthBtns";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
 import UserDropdown from "./UserDropdown";
+import ShowAuthBtns from "./ShowAuthBtns";
 
-const Header = async () => {
+const Header = () => {
   return (
     <header className="bg-background w-full flex justify-center shadow-md">
       <div className="w-full max-w-screen-2xl flex justify-between items-center h-16 px-2">
@@ -27,7 +27,7 @@ const Header = async () => {
         <div className="flex gap-2">
           <UserDropdown />
           <div className="hidden md:flex gap-6">
-            <AuthBtns />
+            <ShowAuthBtns />
             <ModeToggle />
           </div>
           <div className="md:hidden">

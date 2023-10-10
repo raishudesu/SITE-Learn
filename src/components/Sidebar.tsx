@@ -7,10 +7,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import AuthBtns from "./AuthBtns";
 import { ModeToggle } from "./ModeToggle";
 import SideNavMenu from "./SideNavMenu";
-import SignoutBtn from "./SignoutBtn";
+import ShowAuthBtns from "./ShowAuthBtns";
 
 const Sidebar = () => {
   return (
@@ -26,7 +25,7 @@ const Sidebar = () => {
         </SheetHeader>
         <div className="mt-6 flex flex-col justify-center items-center gap-2">
           <SideNavMenu />
-          <AuthBtns />
+          <ShowAuthBtns />
           <ModeToggle />
         </div>
       </SheetContent>
