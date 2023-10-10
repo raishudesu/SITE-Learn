@@ -35,11 +35,11 @@ const SigninForm = () => {
     },
   });
 
-  const failedToast = () => {
+  const failedToast = (msg: string) => {
     toast({
       variant: "destructive",
       title: "Uh oh! Something went wrong.",
-      description: "Please try again later.",
+      description: msg,
     });
   };
 
@@ -60,7 +60,7 @@ const SigninForm = () => {
       });
 
       if (res?.error) {
-        failedToast();
+        failedToast(res.error);
         return null;
       }
 

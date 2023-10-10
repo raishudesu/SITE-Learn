@@ -20,14 +20,17 @@ export const authOptions: NextAuthOptions = {
           await connectDB();
           const user = await User.findOne({ email });
 
-          if (!user) return null;
+          if (!user) throw new Error("non-existent");
 
           const pwdMatched = await bcrypt.compare(pwd, user.password);
-          if (!pwdMatched) return null;
+          if (!pwdMatched) throw new Error("wrong-pwd");
 
           return user;
-        } catch (error) {
-          console.log(error);
+        } catch (error: any) {
+          if (error.message === "non-existent")
+            throw new Error("User doesn't exist");
+          if (error.message === "wrong-pwd")
+            throw new Error("Incorrect password");
         }
       },
     }),
