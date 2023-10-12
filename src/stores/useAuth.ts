@@ -1,7 +1,7 @@
 export const signUp = async (
   name: string,
   email: string,
-  type: string,
+  isAdmin: boolean,
   pwd: string,
   confirmPwd: string
 ) => {
@@ -14,7 +14,7 @@ export const signUp = async (
       body: JSON.stringify({
         name,
         email,
-        type,
+        isAdmin,
         pwd,
         confirmPwd,
       }),

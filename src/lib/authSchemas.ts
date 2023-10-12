@@ -18,7 +18,7 @@ export const SignupSchema = z
     email: z
       .string({ required_error: "Email is required" })
       .email({ message: "Enter a valid email" }),
-    type: z.string().optional(),
+    isAdmin: z.boolean({ required_error: "isAdmin property is required" }),
     pwd: z
       .string({ required_error: "Password is required" })
       .min(6, { message: "Password should be at least 6 characters long" }),

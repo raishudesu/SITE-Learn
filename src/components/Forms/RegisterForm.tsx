@@ -11,7 +11,6 @@ import { TSignup } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignupSchema } from "@/lib/authSchemas";
 import { useToast } from "../ui/use-toast";
-import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -34,6 +33,7 @@ const RegisterForm = () => {
     defaultValues: {
       name: "",
       email: "", // Set your default email value here
+      isAdmin: false,
       pwd: "", // Set your default password value here
       confirmPwd: "",
     },
@@ -58,7 +58,7 @@ const RegisterForm = () => {
     try {
       const { name, email, pwd, confirmPwd } = data;
 
-      const res = await signUp(name, email, "member", pwd, confirmPwd);
+      const res = await signUp(name, email, false, pwd, confirmPwd);
       if (!res.success) {
         failedToast(res.msg);
         return;

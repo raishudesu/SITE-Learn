@@ -39,7 +39,7 @@ const SigninForm = () => {
     toast({
       variant: "destructive",
       title: "Uh oh! Something went wrong.",
-      description: msg,
+      description: msg || "Please try again later",
     });
   };
 

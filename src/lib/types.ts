@@ -6,6 +6,7 @@ export type TSignin = {
 export type TSignup = TSignin & {
   name: string;
   confirmPwd: string;
+  isAdmin: boolean;
 };
 
 export type TFeatureCard = {
