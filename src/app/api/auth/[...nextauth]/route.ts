@@ -36,17 +36,19 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    session: async ({ session, token }) => {
-      if (session?.user) {
-        session.user.id = token.uid as string;
-      }
-      return session;
-    },
     jwt: async ({ user, token }) => {
       if (user) {
         token.uid = user.id;
+        token.isAdmin = user.isAdmin;
       }
       return token;
+    },
+    session: async ({ session, token }) => {
+      if (session?.user) {
+        session.user.id = token.uid as string;
+        session.user.isAdmin = token.isAdmin;
+      }
+      return session;
     },
   },
   session: {
