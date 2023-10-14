@@ -72,7 +72,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <Card className="border-none shadow-md dark:shadow-slate-700">
+    <Card className="border-none shadow-md dark:shadow-slate-800">
       <CardHeader>
         <CardTitle>Sign up</CardTitle>
         <CardDescription>Enter your credentials</CardDescription>

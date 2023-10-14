@@ -1,6 +1,8 @@
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -21,14 +23,24 @@ const ForumCard = () => {
           adipisci magnam excepturi, quaerat suscipit nulla?
         </p>
       </CardContent>
-      <CardFooter className="flex gap-2 justify-between">
-        <div className="flex gap-2 text-muted-foreground">
-          <Label>Author</Label>
-          <Label>Posted date</Label>
+      <CardFooter className="flex flex-col items-start gap-6">
+        <div className="flex flex-wrap gap-2">
+          {Array.from({ length: 3 }, (_, index) => (
+            <Badge key={index} variant={"secondary"}>
+              {"Tag"}
+              {index + 1}
+            </Badge>
+          ))}
         </div>
-        <div className="flex gap-2 items-center">
-          <Heart />
-          <Label>Comment</Label>
+        <div className="w-full flex justify-between gap-3">
+          <div className="flex gap-2  text-muted-foreground items-center">
+            <Label>Author</Label>
+            <Label>Posted date</Label>
+          </div>
+          <div className="flex gap-2 items-center">
+            <Heart size={20} />
+            <Label>Comment</Label>
+          </div>
         </div>
       </CardFooter>
     </Card>

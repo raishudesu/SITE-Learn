@@ -74,7 +74,7 @@ const SigninForm = () => {
   };
 
   return (
-    <Card className="border-none shadow-md dark:shadow-slate-700">
+    <Card className="border-none shadow-md dark:shadow-slate-800">
       <CardHeader>
         <CardTitle>Sign in</CardTitle>
         <CardDescription>Enter your credentials</CardDescription>
@@ -82,7 +82,7 @@ const SigninForm = () => {
       <CardContent>
         <form
           onSubmit={handleSubmit(formSubmit)}
-          className="flex flex-col gap-4 w-80"
+          className="flex flex-col gap-3 w-80"
         >
           <Input
             {...register("email")}
