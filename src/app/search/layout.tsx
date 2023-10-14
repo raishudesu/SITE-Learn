@@ -11,9 +11,9 @@ const SearchLayout = ({ children }: { children: ReactNode }) => {
       </h1>
       <div>
         <NavMenu
-          blogLink="/search-blogs"
-          forumsLink="/search-forums"
-          materialsLink="/search-materials"
+          blogLink="/search"
+          forumsLink="/search/forums"
+          materialsLink="/search/materials"
         />
       </div>
       {children}
