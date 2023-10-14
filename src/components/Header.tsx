@@ -7,6 +7,7 @@ import Link from "next/link";
 import Sidebar from "./Sidebar";
 import UserDropdown from "./UserDropdown";
 import ShowAuthBtns from "./ShowAuthBtns";
+import CreateBlogBtn from "@/app/blogs/components/CreateBlogBtn";
 
 const Header = () => {
   return (
@@ -25,6 +26,7 @@ const Header = () => {
           <NavMenu />
         </div>
         <div className="flex gap-2">
+          <CreateBlogBtn />
           <UserDropdown />
           <div className="hidden md:flex gap-6">
             <ShowAuthBtns />

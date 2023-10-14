@@ -2,6 +2,11 @@ import PostForum from "./components/PostForum";
 import ForumCard from "./components/ForumCard";
 import NoUser from "./components/NoUser";
 import { getServerSession } from "next-auth";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Forums",
+};
 
 const Forums = async () => {
   const session = await getServerSession();
