@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const PostForum = () => {
   return (
-    <Card className="w-full max-w-screen-sm mt-6">
+    <Card className="w-full max-w-screen-sm">
       <CardHeader>
         <CardTitle>Create Forum</CardTitle>
       </CardHeader>

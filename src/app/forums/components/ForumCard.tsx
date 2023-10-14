@@ -10,18 +10,16 @@ import { Heart } from "lucide-react";
 
 const ForumCard = () => {
   return (
-    <Card className="w-full max-w-screen-sm mt-6">
+    <Card className="w-full max-w-screen-sm">
       <CardHeader>
         <CardTitle>Forum title</CardTitle>
       </CardHeader>
       <CardContent>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-            mollitia quia debitis illum voluptatum iusto beatae impedit omnis
-            adipisci magnam excepturi, quaerat suscipit nulla?
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          mollitia quia debitis illum voluptatum iusto beatae impedit omnis
+          adipisci magnam excepturi, quaerat suscipit nulla?
+        </p>
       </CardContent>
       <CardFooter className="flex gap-2 justify-between">
         <div className="flex gap-2 text-muted-foreground">
