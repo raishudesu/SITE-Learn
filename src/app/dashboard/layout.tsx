@@ -16,9 +16,9 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
       <ProfileCard />
       <div>
         <NavMenu
-          blogLink="/my-blogs"
-          forumsLink="/my-forums"
-          materialsLink="/my-materials"
+          blogLink="/dashboard"
+          forumsLink="/dashboard/forums"
+          materialsLink="/dashboard/materials"
         />
       </div>
       {children}
