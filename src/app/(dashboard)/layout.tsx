@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ProfileCard from "./components/ProfileCard";
-import NavMenu from "./components/NavMenu";
 import { ReactNode } from "react";
+import NavMenu from "@/components/NavMenu";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -15,7 +15,11 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
       </h1>
       <ProfileCard />
       <div>
-        <NavMenu />
+        <NavMenu
+          blogLink="/my-blogs"
+          forumsLink="/my-forums"
+          materialsLink="/my-materials"
+        />
       </div>
       {children}
     </section>

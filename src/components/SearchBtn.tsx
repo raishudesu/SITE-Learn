@@ -1,9 +1,18 @@
+"use client";
+
 import { Search } from "lucide-react";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 const SearchBtn = () => {
+  const router = useRouter();
+
   return (
-    <Button variant={"secondary"} className="px-3 rounded-full">
+    <Button
+      onClick={() => router.push("search-blogs")}
+      variant={"secondary"}
+      className="px-3 rounded-full"
+    >
       <Search />
     </Button>
   );

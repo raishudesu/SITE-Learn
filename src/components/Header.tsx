@@ -1,5 +1,4 @@
 import React from "react";
-import NavMenu from "./NavMenu";
 import { ModeToggle } from "./ModeToggle";
 import Image from "next/image";
 import Logo from "../assets/Logo.svg";
@@ -9,6 +8,7 @@ import UserDropdown from "./UserDropdown";
 import ShowAuthBtns from "./ShowAuthBtns";
 import CreateBlogBtn from "@/app/blogs/components/CreateBlogBtn";
 import SearchBtn from "./SearchBtn";
+import HeaderNavMenu from "./HeaderNavMenu";
 
 const Header = () => {
   return (
@@ -24,7 +24,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="hidden md:block">
-          <NavMenu />
+          <HeaderNavMenu />
         </div>
         <div className="flex gap-2 items-center">
           <SearchBtn />
