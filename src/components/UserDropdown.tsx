@@ -31,7 +31,7 @@ const UserDropdown = async () => {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Link href={"/dashboard"} className="w-full flex items-center">
+            <Link href={"/my-blogs"} className="w-full flex items-center">
               <User className="mr-2 h-4 w-4" />
               Dashboard
             </Link>

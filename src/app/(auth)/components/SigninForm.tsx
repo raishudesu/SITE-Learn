@@ -65,7 +65,7 @@ const SigninForm = () => {
       }
 
       successToast();
-      router.replace("dashboard");
+      router.replace("my-blogs");
       router.refresh();
     } catch (error) {
       console.log(error);

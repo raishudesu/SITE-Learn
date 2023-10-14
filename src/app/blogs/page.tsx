@@ -1,4 +1,3 @@
-import Maintenance from "@/components/Maintenance";
 import { Metadata } from "next";
 import BlogCard from "./components/BlogCard";
 
