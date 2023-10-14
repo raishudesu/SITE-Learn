@@ -8,6 +8,7 @@ import Sidebar from "./Sidebar";
 import UserDropdown from "./UserDropdown";
 import ShowAuthBtns from "./ShowAuthBtns";
 import CreateBlogBtn from "@/app/blogs/components/CreateBlogBtn";
+import SearchBtn from "./SearchBtn";
 
 const Header = () => {
   return (
@@ -19,13 +20,14 @@ const Header = () => {
             href={"/"}
             className="scroll-m-20 text-2xl font-bold tracking-tight transition-colors first:mt-0"
           >
-            SITE Learn
+            <span className="text-[#16BC25]">SITE</span> Learn
           </Link>
         </div>
         <div className="hidden md:block">
           <NavMenu />
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
+          <SearchBtn />
           <CreateBlogBtn />
           <UserDropdown />
           <div className="hidden md:flex gap-6">
