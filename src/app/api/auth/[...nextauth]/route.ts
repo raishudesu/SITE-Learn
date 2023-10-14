@@ -4,7 +4,7 @@ import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { SigninSchema } from "@/lib/authSchemas";
+import { signinSchema } from "@/lib/authSchemas";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
         pwd: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const { email, pwd } = SigninSchema.parse(credentials); //MIDDLEWARE VALIDATOR FOR SIGN IN DATA
+        const { email, pwd } = signinSchema.parse(credentials); //MIDDLEWARE VALIDATOR FOR SIGN IN DATA
         try {
           await connectDB();
           const user = await User.findOne({ email });

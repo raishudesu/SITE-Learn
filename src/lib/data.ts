@@ -80,3 +80,14 @@ export const materialsList: {
       "Explore data analytics materials, including data visualization, data mining, and statistical analysis techniques.",
   },
 ];
+
+export const sidebarNavItems = [
+  {
+    title: "Profile",
+    href: "/settings",
+  },
+  {
+    title: "Account",
+    href: "/settings/account",
+  },
+];

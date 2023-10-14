@@ -1,23 +1,11 @@
 import { Metadata } from "next";
-import Image from "next/image";
-
 import { Separator } from "@/components/ui/separator";
 import { SidebarNav } from "./sidebar-nav";
+import { sidebarNavItems } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Settings",
 };
-
-const sidebarNavItems = [
-  {
-    title: "Profile",
-    href: "/settings",
-  },
-  {
-    title: "Account",
-    href: "/settings/account",
-  },
-];
 
 interface SettingsLayoutProps {
   children: React.ReactNode;

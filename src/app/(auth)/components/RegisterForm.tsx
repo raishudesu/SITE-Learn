@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { TSignup } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignupSchema } from "@/lib/authSchemas";
+import { signupSchema } from "@/lib/authSchemas";
 import { useToast } from "../../../components/ui/use-toast";
 import {
   Card,
@@ -29,7 +29,7 @@ const RegisterForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<TSignup>({
-    resolver: zodResolver(SignupSchema),
+    resolver: zodResolver(signupSchema),
     defaultValues: {
       name: "",
       email: "", // Set your default email value here

@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { TSignin } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SigninSchema } from "@/lib/authSchemas";
+import { signinSchema } from "@/lib/authSchemas";
 import { toast } from "../../../components/ui/use-toast";
 import {
   Card,
@@ -28,7 +28,7 @@ const SigninForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<TSignin>({
-    resolver: zodResolver(SigninSchema),
+    resolver: zodResolver(signinSchema),
     defaultValues: {
       email: "", // Set your default email value here
       pwd: "", // Set your default password value here

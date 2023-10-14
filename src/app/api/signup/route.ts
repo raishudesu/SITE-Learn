@@ -2,11 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import User from "@/models/User/user";
 import connectDB from "@/lib/mongodb";
-import { SignupSchema } from "@/lib/authSchemas";
+import { signupSchema } from "@/lib/authSchemas";
 
 export const POST = async (req: NextRequest) => {
   try {
-    const data = SignupSchema.parse(await req.json()); //MIDDLEWARE FOR VALIDATING REGISTER DATA
+    const data = signupSchema.parse(await req.json()); //MIDDLEWARE FOR VALIDATING REGISTER DATA
 
     const { name, email, isAdmin, pwd, confirmPwd } = data;
 

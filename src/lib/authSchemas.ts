@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const SigninSchema = z.object({
+export const signinSchema = z.object({
   email: z
     .string({ required_error: "Email is required" })
     .email({ message: "Enter a valid email" }),
@@ -9,7 +9,7 @@ export const SigninSchema = z.object({
     .min(6, { message: "Password should be at least 6 characters long" }),
 });
 
-export const SignupSchema = z
+export const signupSchema = z
   .object({
     name: z
       .string({ required_error: "Name is required" })
@@ -30,3 +30,27 @@ export const SignupSchema = z
     path: ["confirmPwd"],
     message: "Passwords do not match",
   });
+
+export const profileFormSchema = z.object({
+  username: z
+    .string()
+    .min(2, {
+      message: "Username must be at least 2 characters.",
+    })
+    .max(30, {
+      message: "Username must not be longer than 30 characters.",
+    }),
+  email: z
+    .string({
+      required_error: "Please select an email to display.",
+    })
+    .email(),
+  bio: z.string().max(160).min(4),
+  urls: z
+    .array(
+      z.object({
+        value: z.string().url({ message: "Please enter a valid URL." }),
+      })
+    )
+    .optional(),
+});

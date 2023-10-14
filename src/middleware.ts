@@ -10,6 +10,7 @@ export const config = {
     "/ai-chat",
     "/profile",
     "/settings",
+    "/settings/account",
     "/materials",
     "/blogs/create",
   ],
