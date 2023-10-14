@@ -1,16 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Label } from "../../../components/ui/label";
+import { Input } from "../../../components/ui/input";
+import { Button } from "../../../components/ui/button";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { TSignin } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SigninSchema } from "@/lib/authSchemas";
-import { toast } from "../ui/use-toast";
+import { toast } from "../../../components/ui/use-toast";
 import {
   Card,
   CardContent,
@@ -18,7 +18,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "../../../components/ui/card";
 
 const SigninForm = () => {
   const router = useRouter();
