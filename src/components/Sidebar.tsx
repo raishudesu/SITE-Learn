@@ -21,7 +21,9 @@ const Sidebar = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>SITE Learn</SheetTitle>
+          <SheetTitle>
+            <span className="text-[#16BC25]">SITE</span> Learn
+          </SheetTitle>
         </SheetHeader>
         <div className="mt-6 flex flex-col justify-center items-center gap-2">
           <SideNavMenu />
