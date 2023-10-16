@@ -1,7 +1,7 @@
-import { Input } from "@/components/ui/input";
 import ChatCard from "./ChatCard";
 import { Button } from "@/components/ui/button";
 import { SendHorizontal } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 
 const chatData = [
   {
@@ -39,8 +39,8 @@ const ChatField = () => {
           </div>
         ))}
       </div>
-      <div className="flex gap-2">
-        <Input placeholder="Enter chat" />
+      <div className="flex gap-2 items-center">
+        <Textarea placeholder="Enter your message..." className="resize-none" />
         <Button>
           <SendHorizontal />
         </Button>

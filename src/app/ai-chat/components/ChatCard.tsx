@@ -8,9 +8,9 @@ const ChatCard = ({ content, sender }: { content: string; sender: string }) => {
   return (
     <Card className="max-w-screen-sm">
       <CardHeader>
-        <CardTitle>{checkSender(sender)}</CardTitle>
+        <CardTitle className="text-lg">{checkSender(sender)}</CardTitle>
       </CardHeader>
-      <CardContent className="flex gap-2 text-muted-foreground">
+      <CardContent className="flex gap-2 text-muted-foreground text-md">
         {content}
       </CardContent>
     </Card>

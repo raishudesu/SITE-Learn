@@ -16,6 +16,7 @@ const CreateBlogForm = () => {
             <Input placeholder="Add tag" />
             <Button variant={"secondary"}>Add</Button>
           </div>
+          <Textarea placeholder="Blog summary" />
           <Textarea placeholder="This is a text area placeholder for a text editor" />
           <Button className="self-end">Post</Button>
         </form>
