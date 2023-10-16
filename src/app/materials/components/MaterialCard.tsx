@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 
 const MaterialCard = () => {
   return (
-    <Card className="w-full max-w-screen-sm">
+    <Card className="w-full max-w-screen-sm hover:shadow-lg cursor-pointer dark:shadow-slate-800 transition ease-in-out">
       <CardHeader>
         <CardTitle>Material Name</CardTitle>
       </CardHeader>
