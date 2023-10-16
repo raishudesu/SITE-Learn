@@ -1,13 +1,7 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const MyFroalaEditor = dynamic(() => import("./MyFroalaEditor"), {
-  ssr: false,
-});
+import { Textarea } from "@/components/ui/textarea";
 
 const CreateBlogForm = () => {
   return (
@@ -22,7 +16,7 @@ const CreateBlogForm = () => {
             <Input placeholder="Add tag" />
             <Button variant={"secondary"}>Add</Button>
           </div>
-          <MyFroalaEditor />
+          <Textarea placeholder="This is a text area placeholder for a text editor" />
           <Button className="self-end">Post</Button>
         </form>
       </CardContent>
