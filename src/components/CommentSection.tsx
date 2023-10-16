@@ -1,7 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Comment from "./Comment";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import CommentCard from "./CommentCard";
 
-const BlogCommentCard = () => {
+const CommentSection = () => {
   return (
     <Card>
       <CardHeader>
@@ -9,11 +9,11 @@ const BlogCommentCard = () => {
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
         {Array.from({ length: 3 }, (_, index) => (
-          <Comment key={index} />
+          <CommentCard key={index} />
         ))}
       </CardContent>
     </Card>
   );
 };
 
-export default BlogCommentCard;
+export default CommentSection;

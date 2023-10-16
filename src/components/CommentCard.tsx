@@ -1,12 +1,13 @@
+import React from "react";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "./ui/card";
 
-const Comment = () => {
+const CommentCard = () => {
   return (
     <Card>
       <CardHeader>
@@ -24,4 +25,4 @@ const Comment = () => {
   );
 };
 
-export default Comment;
+export default CommentCard;

@@ -1,3 +1,4 @@
+import CommentSection from "@/components/CommentSection";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -8,19 +9,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import sampleBlog from "@/lib/sampleBlog";
 import { Heart } from "lucide-react";
-import CommentSection from "@/components/CommentSection";
+import React from "react";
 
-const ViewBlog = () => {
+const ViewForum = () => {
   return (
     <div className="flex flex-col gap-6 max-w-screen-lg ">
       <Card className="flex flex-col">
         <CardHeader>
-          <CardTitle>
-            Cybersecurity Challenges in Developing Nations: Safeguarding the
-            Digital Frontier
-          </CardTitle>
+          <CardTitle>What are your learning strategies?</CardTitle>
           <CardDescription>by Barysh</CardDescription>
         </CardHeader>
         <CardContent>
@@ -35,13 +32,12 @@ const ViewBlog = () => {
               ))}
             </div>
           </div>
-          <div
-            dangerouslySetInnerHTML={{ __html: sampleBlog }}
-            className="w-full mt-6 mb-6 gap-1 text-lg text-start dark:text-muted-foreground"
-          />
+          <p className="mt-3">
+            Veniam id tenetur molestias officia illum eos obcaecati ipsum
+            perspiciatis? Dolore ipsam quaerat repellat eaque quasi?
+          </p>
         </CardContent>
-        <CardFooter className="flex justify-between">
-          <Label>SITE Learn @2023</Label>
+        <CardFooter className="flex justify-end">
           <div className="flex gap-2 items-center">
             <Heart size={20} />
             <Label>Comment</Label>
@@ -53,4 +49,4 @@ const ViewBlog = () => {
   );
 };
 
-export default ViewBlog;
+export default ViewForum;
