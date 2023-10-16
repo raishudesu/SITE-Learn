@@ -1,18 +1,25 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Heart } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const ForumCard = () => {
+  const router = useRouter();
+
   return (
-    <Card className="w-full max-w-screen-sm">
+    <Card
+      className="w-full max-w-screen-sm cursor-pointer hover:shadow-lg dark:shadow-slate-800 transition ease-in-out"
+      onClick={() => router.push("/forums/view")}
+    >
       <CardHeader>
         <CardTitle>Forum title</CardTitle>
       </CardHeader>

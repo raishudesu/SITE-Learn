@@ -7,7 +7,11 @@ export const metadata: Metadata = {
 };
 
 const Signin = () => {
-  return <SigninForm />;
+  return (
+    <div className="w-full max-w-sm">
+      <SigninForm />
+    </div>
+  );
 };
 
 export default Signin;

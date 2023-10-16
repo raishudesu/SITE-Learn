@@ -13,7 +13,7 @@ interface SettingsLayoutProps {
 
 export default function SettingsLayout({ children }: SettingsLayoutProps) {
   return (
-    <section className="min-h-[80vh] flex flex-col items-center gap-6 px-6 py-3">
+    <section className="min-h-[80vh] flex flex-col items-center gap-6 p-3">
       <div className="w-full max-w-screen-md ">
         <div className="space-y-0.5">
           <h2 className="text-2xl font-bold tracking-tight text-[#16BC25]">

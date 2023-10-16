@@ -16,7 +16,7 @@ const BlogCard = () => {
 
   return (
     <Card
-      className="w-full max-w-screen-sm cursor-pointer"
+      className="w-full max-w-screen-sm cursor-pointer hover:shadow-lg dark:shadow-slate-800 transition ease-in-out"
       onClick={() => router.push("/blogs/view")}
     >
       <CardHeader>

@@ -80,7 +80,7 @@ const RegisterForm = () => {
       <CardContent>
         <form
           onSubmit={handleSubmit(formSubmit)}
-          className="flex flex-col gap-3 w-80"
+          className="w-full flex flex-col gap-3"
         >
           <Input
             {...register("name")}
