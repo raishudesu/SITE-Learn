@@ -1,5 +1,3 @@
-import { AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
-import { BsDiscord } from "react-icons/bs";
 import CommunityImg from "../../../assets/Community.svg";
 import Image from "next/image";
 
@@ -9,7 +7,7 @@ const Community = () => {
       id="community"
       className="w-full flex justify-center items-center text-blue-gray-900  overflow-hidden"
     >
-      <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-16">
         <div className="">
           <Image src={CommunityImg} alt="communityimg" />
         </div>
@@ -26,11 +24,6 @@ const Community = () => {
               network of IT enthusiasts on a mission to learn and innovate
               together. Join us today and be part of something bigger.
             </span>
-          </div>
-          <div className="flex gap-4">
-            <AiOutlineTwitter size={30} />
-            <AiFillLinkedin size={30} />
-            <BsDiscord size={30} />
           </div>
         </div>
       </div>
