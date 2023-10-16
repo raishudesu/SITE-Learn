@@ -9,38 +9,47 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import sampleBlog from "@/lib/sampleBlog";
+import BlogCommentCard from "./components/BlogCommentCard";
+import { Heart } from "lucide-react";
 
 const ViewBlog = () => {
   return (
-    <Card className="max-w-screen-lg flex flex-col">
-      <CardHeader>
-        <CardTitle>
-          Cybersecurity Challenges in Developing Nations: Safeguarding the
-          Digital Frontier
-        </CardTitle>
-        <CardDescription>by Barysh</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="w-full flex flex-col gap-3">
-          <Label>Posted date</Label>
-          <div className="flex flex-wrap gap-2">
-            {Array.from({ length: 3 }, (_, index) => (
-              <Badge key={index} variant={"secondary"}>
-                {"Tag"}
-                {index + 1}
-              </Badge>
-            ))}
+    <div className="flex flex-col gap-6 max-w-screen-lg ">
+      <Card className="flex flex-col">
+        <CardHeader>
+          <CardTitle>
+            Cybersecurity Challenges in Developing Nations: Safeguarding the
+            Digital Frontier
+          </CardTitle>
+          <CardDescription>by Barysh</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="w-full flex flex-col gap-3">
+            <Label>Posted date</Label>
+            <div className="flex flex-wrap gap-2">
+              {Array.from({ length: 3 }, (_, index) => (
+                <Badge key={index} variant={"secondary"}>
+                  {"Tag"}
+                  {index + 1}
+                </Badge>
+              ))}
+            </div>
           </div>
-        </div>
-        <div
-          dangerouslySetInnerHTML={{ __html: sampleBlog }}
-          className="w-full mt-6 mb-6 gap-1 text-lg text-start"
-        />
-      </CardContent>
-      <CardFooter>
-        <Label>SITE Learn @2023</Label>
-      </CardFooter>
-    </Card>
+          <div
+            dangerouslySetInnerHTML={{ __html: sampleBlog }}
+            className="w-full mt-6 mb-6 gap-1 text-lg text-start"
+          />
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Label>SITE Learn @2023</Label>
+          <div className="flex gap-2 items-center">
+            <Heart size={20} />
+            <Label>Comment</Label>
+          </div>
+        </CardFooter>
+      </Card>
+      <BlogCommentCard />
+    </div>
   );
 };
 
