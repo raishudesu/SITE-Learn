@@ -14,7 +14,7 @@ const Comment = () => {
         <CardDescription>Posted date</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>
+        <p className="dark:text-muted-foreground">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, unde
           possimus itaque ut veniam enim natus et, magnam voluptatum, asperiores
           pariatur animi quaerat consequatur dolores?

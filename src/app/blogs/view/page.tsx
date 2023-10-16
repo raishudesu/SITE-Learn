@@ -37,7 +37,7 @@ const ViewBlog = () => {
           </div>
           <div
             dangerouslySetInnerHTML={{ __html: sampleBlog }}
-            className="w-full mt-6 mb-6 gap-1 text-lg text-start"
+            className="w-full mt-6 mb-6 gap-1 text-lg text-start dark:text-muted-foreground"
           />
         </CardContent>
         <CardFooter className="flex justify-between">
