@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -7,10 +9,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useRouter } from "next/navigation";
 
 const MaterialCard = () => {
+  const router = useRouter();
   return (
-    <Card className="w-full max-w-screen-sm hover:shadow-lg cursor-pointer dark:shadow-slate-800 transition ease-in-out">
+    <Card
+      className="w-full max-w-screen-sm hover:shadow-lg cursor-pointer dark:shadow-slate-800 transition ease-in-out"
+      onClick={() => router.push("/materials/view")}
+    >
       <CardHeader>
         <CardTitle>Material Name</CardTitle>
       </CardHeader>
