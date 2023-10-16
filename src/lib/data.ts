@@ -51,33 +51,33 @@ export const materialsList: {
   },
   {
     title: "Web Development",
-    href: "",
+    href: "/search/materials",
     description:
       "Explore a wide range of materials focused on web development, covering HTML, CSS, JavaScript, frameworks, and more.",
   },
   {
     title: "Software Engineering",
-    href: "",
+    href: "/search/materials",
     description:
       "Access materials related to software engineering, including software design principles, coding practices, and project management.",
   },
   {
     title: "Cybersecurity",
-    href: "",
+    href: "/search/materials",
     description:
       "Discover cybersecurity materials, including topics like network security, ethical hacking, and data protection strategies.",
   },
   {
-    title: "Networking",
-    href: "",
+    title: "Mobile Development",
+    href: "/search/materials",
     description:
-      "Access networking materials that delve into network protocols, configurations, and infrastructure.",
+      "Access mobile development materials, including app development, mobile UI/UX, and platform-specific technologies for iOS and Android.",
   },
   {
-    title: "Data Analytics",
-    href: "",
+    title: "UI/UX Design",
+    href: "/search/materials",
     description:
-      "Explore data analytics materials, including data visualization, data mining, and statistical analysis techniques.",
+      "Access UI/UX design materials to learn about user interface and user experience design principles, techniques, and best practices.",
   },
 ];
 

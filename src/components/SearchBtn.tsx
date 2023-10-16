@@ -9,7 +9,7 @@ const SearchBtn = () => {
 
   return (
     <Button
-      onClick={() => router.push("search")}
+      onClick={() => router.push("/search")}
       variant={"secondary"}
       className="px-3 rounded-full"
     >
