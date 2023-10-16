@@ -1,17 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { signUp } from "../../stores/useAuth";
+import { Label } from "../../../components/ui/label";
+import { Input } from "../../../components/ui/input";
+import { Button } from "../../../components/ui/button";
+import { signUp } from "../../../stores/useAuth";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { TSignup } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignupSchema } from "@/lib/authSchemas";
-import { useToast } from "../ui/use-toast";
-import { useState } from "react";
+import { signupSchema } from "@/lib/authSchemas";
+import { useToast } from "../../../components/ui/use-toast";
 import {
   Card,
   CardContent,
@@ -19,7 +18,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "../../../components/ui/card";
 
 const RegisterForm = () => {
   const router = useRouter();
@@ -30,10 +29,11 @@ const RegisterForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<TSignup>({
-    resolver: zodResolver(SignupSchema),
+    resolver: zodResolver(signupSchema),
     defaultValues: {
       name: "",
       email: "", // Set your default email value here
+      isAdmin: false,
       pwd: "", // Set your default password value here
       confirmPwd: "",
     },
@@ -58,7 +58,7 @@ const RegisterForm = () => {
     try {
       const { name, email, pwd, confirmPwd } = data;
 
-      const res = await signUp(name, email, "member", pwd, confirmPwd);
+      const res = await signUp(name, email, false, pwd, confirmPwd);
       if (!res.success) {
         failedToast(res.msg);
         return;
@@ -72,7 +72,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <Card className="border-none shadow-md dark:shadow-slate-700">
+    <Card className="border-none shadow-md dark:shadow-slate-800">
       <CardHeader>
         <CardTitle>Sign up</CardTitle>
         <CardDescription>Enter your credentials</CardDescription>

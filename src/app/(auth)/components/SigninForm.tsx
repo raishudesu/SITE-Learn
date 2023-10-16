@@ -1,16 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Label } from "../../../components/ui/label";
+import { Input } from "../../../components/ui/input";
+import { Button } from "../../../components/ui/button";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { TSignin } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SigninSchema } from "@/lib/authSchemas";
-import { toast } from "../ui/use-toast";
+import { signinSchema } from "@/lib/authSchemas";
+import { toast } from "../../../components/ui/use-toast";
 import {
   Card,
   CardContent,
@@ -18,7 +18,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "../../../components/ui/card";
 
 const SigninForm = () => {
   const router = useRouter();
@@ -28,18 +28,18 @@ const SigninForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<TSignin>({
-    resolver: zodResolver(SigninSchema),
+    resolver: zodResolver(signinSchema),
     defaultValues: {
       email: "", // Set your default email value here
       pwd: "", // Set your default password value here
     },
   });
 
-  const failedToast = () => {
+  const failedToast = (msg: string) => {
     toast({
       variant: "destructive",
       title: "Uh oh! Something went wrong.",
-      description: "Please try again later.",
+      description: msg || "Please try again later",
     });
   };
 
@@ -60,12 +60,12 @@ const SigninForm = () => {
       });
 
       if (res?.error) {
-        failedToast();
+        failedToast(res.error);
         return null;
       }
 
       successToast();
-      router.replace("dashboard");
+      router.replace("/dashboard");
       router.refresh();
     } catch (error) {
       console.log(error);
@@ -74,7 +74,7 @@ const SigninForm = () => {
   };
 
   return (
-    <Card className="border-none shadow-md dark:shadow-slate-700">
+    <Card className="border-none shadow-md dark:shadow-slate-800">
       <CardHeader>
         <CardTitle>Sign in</CardTitle>
         <CardDescription>Enter your credentials</CardDescription>
@@ -82,7 +82,7 @@ const SigninForm = () => {
       <CardContent>
         <form
           onSubmit={handleSubmit(formSubmit)}
-          className="flex flex-col gap-4 w-80"
+          className="flex flex-col gap-3 w-80"
         >
           <Input
             {...register("email")}

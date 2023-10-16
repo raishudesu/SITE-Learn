@@ -18,14 +18,14 @@ const userSchema = new Schema(
         "Invalid email",
       ],
     },
-    type: {
-      type: String,
-      required: [true, "User type is required"],
+    isAdmin: {
+      type: Boolean,
+      required: [true, "isAdmin property is required"],
     },
     password: {
       type: String,
       required: [true, "Password is required"],
-      minLength: [6, "Password must be larger than 6 characters "],
+      minLength: [6, "Password must be larger than 6 characters"],
     },
   },
   { timestamps: true }

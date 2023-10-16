@@ -1,23 +1,14 @@
-import { Metadata } from "next";
-import Maintenance from "@/components/Maintenance";
-import { getServerSession } from "next-auth";
+import BlogCard from "@/app/blogs/components/BlogCard";
 
-export const metadata: Metadata = {
-  title: "Dashboard",
-};
-
-const Dashboard = async () => {
-  const session = await getServerSession();
-  const user = session?.user?.name;
+const Blogs = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col items-center justify-center gap-6">
-      <h1 className="text-2xl font-bold text-center">
-        Welcome to your Dashboard,{" "}
-        <span className="text-[#16BC25]">{user}</span>
-      </h1>
-      <Maintenance />
-    </section>
+    <>
+      <h1 className="text-xl font-bold text-[#16BC25]">My Blogs</h1>
+      {Array.from({ length: 3 }, (_, index) => (
+        <BlogCard key={index} />
+      ))}
+    </>
   );
 };
 
-export default Dashboard;
+export default Blogs;

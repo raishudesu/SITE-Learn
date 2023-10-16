@@ -1,11 +1,13 @@
-import Maintenance from "@/components/Maintenance";
+import BlogCard from "./components/BlogCard";
 
 const Blogs = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col items-center justify-center gap-6">
-      <h1 className="text-2xl font-bold text-center">Blogs page</h1>
-      <Maintenance />
-    </section>
+    <>
+      <h1 className="text-2xl font-bold text-[#16BC25]">Blogs</h1>
+      {Array.from({ length: 3 }, (_, index) => (
+        <BlogCard key={index} />
+      ))}
+    </>
   );
 };
 

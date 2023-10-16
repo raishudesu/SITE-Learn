@@ -4,7 +4,7 @@ import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { SigninSchema } from "@/lib/authSchemas";
+import { signinSchema } from "@/lib/authSchemas";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -15,35 +15,40 @@ export const authOptions: NextAuthOptions = {
         pwd: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const { email, pwd } = SigninSchema.parse(credentials); //MIDDLEWARE VALIDATOR FOR SIGN IN DATA
+        const { email, pwd } = signinSchema.parse(credentials); //MIDDLEWARE VALIDATOR FOR SIGN IN DATA
         try {
           await connectDB();
           const user = await User.findOne({ email });
 
-          if (!user) return null;
+          if (!user) throw new Error("non-existent");
 
           const pwdMatched = await bcrypt.compare(pwd, user.password);
-          if (!pwdMatched) return null;
-
+          if (!pwdMatched) throw new Error("wrong-pwd");
+          console.log(user);
           return user;
-        } catch (error) {
-          console.log(error);
+        } catch (error: any) {
+          if (error.message === "non-existent")
+            throw new Error("User doesn't exist");
+          if (error.message === "wrong-pwd")
+            throw new Error("Incorrect password");
         }
       },
     }),
   ],
   callbacks: {
-    session: async ({ session, token }) => {
-      if (session?.user) {
-        session.user.id = token.uid as string;
-      }
-      return session;
-    },
     jwt: async ({ user, token }) => {
       if (user) {
         token.uid = user.id;
+        token.isAdmin = user.isAdmin;
       }
       return token;
+    },
+    session: async ({ session, token }) => {
+      if (session?.user) {
+        session.user.id = token.uid as string;
+        session.user.isAdmin = token.isAdmin;
+      }
+      return session;
     },
   },
   session: {
