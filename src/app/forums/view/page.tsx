@@ -3,6 +3,7 @@
 import AddComment from "@/components/AddComment";
 import CommentSection from "@/components/CommentSection";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -18,7 +19,7 @@ import React, { useState } from "react";
 const ViewForum = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex flex-col gap-6 max-w-screen-lg ">
+    <div className="flex flex-col gap-6 max-w-screen-md ">
       <Card className="flex flex-col">
         <CardHeader>
           <CardTitle>What are your learning strategies?</CardTitle>
@@ -42,12 +43,13 @@ const ViewForum = () => {
           </p>
         </CardContent>
         <CardFooter className="flex justify-end">
-          <div
-            className="flex gap-2 items-center cursor-pointer"
-            onClick={() => setOpen(!open)}
-          >
-            <Heart size={20} />
-            <Label>Comment</Label>
+          <div className="flex gap-2 items-center">
+            <Button variant={"secondary"}>
+              <Heart size={20} />
+            </Button>
+            <Button variant={"secondary"} onClick={() => setOpen(!open)}>
+              Comment
+            </Button>
           </div>
         </CardFooter>
       </Card>

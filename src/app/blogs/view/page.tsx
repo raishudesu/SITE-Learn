@@ -15,6 +15,7 @@ import { Heart } from "lucide-react";
 import CommentSection from "@/components/CommentSection";
 import AddComment from "@/components/AddComment";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const ViewBlog = () => {
   const [open, setOpen] = useState(false);
@@ -47,12 +48,13 @@ const ViewBlog = () => {
         </CardContent>
         <CardFooter className="flex justify-between">
           <Label>SITE Learn @2023</Label>
-          <div
-            className="flex gap-2 items-center"
-            onClick={() => setOpen(!open)}
-          >
-            <Heart size={20} />
-            <Label>Comment</Label>
+          <div className="flex gap-2 items-center">
+            <Button variant={"secondary"}>
+              <Heart size={20} />
+            </Button>
+            <Button variant={"secondary"} onClick={() => setOpen(!open)}>
+              Comment
+            </Button>
           </div>
         </CardFooter>
       </Card>

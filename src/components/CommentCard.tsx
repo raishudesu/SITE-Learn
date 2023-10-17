@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Label } from "./ui/label";
+import { Button } from "./ui/button";
 
 const CommentCard = () => {
   return (
@@ -24,10 +25,10 @@ const CommentCard = () => {
         </p>
       </CardContent>
       <CardFooter className="flex justify-end">
-        <div className="flex items-center gap-1">
-          <Reply />
+        <Button className="flex items-center gap-1" variant={"secondary"}>
+          <Reply size={20} />
           <Label>Reply</Label>
-        </div>
+        </Button>
       </CardFooter>
     </Card>
   );
