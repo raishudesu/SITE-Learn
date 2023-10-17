@@ -1,6 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -45,8 +46,10 @@ const ForumCard = () => {
             <Label>Posted date</Label>
           </div>
           <div className="flex gap-2 items-center">
-            <Heart size={20} />
-            <Label>Comment</Label>
+            <Button variant={"secondary"}>
+              <Heart size={20} />
+            </Button>
+            <Button variant={"secondary"}>Comment</Button>
           </div>
         </div>
       </CardFooter>
