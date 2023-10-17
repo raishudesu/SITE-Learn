@@ -1,5 +1,10 @@
 import React from "react";
 import ChatField from "./components/ChatField";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI Chat",
+};
 
 const AiChat = () => {
   return (

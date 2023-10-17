@@ -1,11 +1,13 @@
-import React from "react";
+import { Reply } from "lucide-react";
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import { Label } from "./ui/label";
 
 const CommentCard = () => {
   return (
@@ -21,6 +23,12 @@ const CommentCard = () => {
           pariatur animi quaerat consequatur dolores?
         </p>
       </CardContent>
+      <CardFooter className="flex justify-end">
+        <div className="flex items-center gap-1">
+          <Reply />
+          <Label>Reply</Label>
+        </div>
+      </CardFooter>
     </Card>
   );
 };

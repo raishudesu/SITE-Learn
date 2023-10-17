@@ -1,3 +1,6 @@
+"use client";
+
+import AddComment from "@/components/AddComment";
 import CommentSection from "@/components/CommentSection";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -10,9 +13,10 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Heart } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 const ViewForum = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex flex-col gap-6 max-w-screen-lg ">
       <Card className="flex flex-col">
@@ -38,12 +42,16 @@ const ViewForum = () => {
           </p>
         </CardContent>
         <CardFooter className="flex justify-end">
-          <div className="flex gap-2 items-center">
+          <div
+            className="flex gap-2 items-center cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
             <Heart size={20} />
             <Label>Comment</Label>
           </div>
         </CardFooter>
       </Card>
+      {open && <AddComment />}
       <CommentSection />
     </div>
   );
