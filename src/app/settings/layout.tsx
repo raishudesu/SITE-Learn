@@ -13,15 +13,12 @@ interface SettingsLayoutProps {
 
 export default function SettingsLayout({ children }: SettingsLayoutProps) {
   return (
-    <section className="min-h-[80vh] flex flex-col items-center gap-6 p-3">
+    <section className="w-full min-h-[80vh] flex flex-col items-center gap-6 p-3">
       <div className="w-full max-w-screen-md ">
-        <div className="space-y-0.5">
+        <div className="space-y-0.5 text-center">
           <h2 className="text-2xl font-bold tracking-tight text-[#16BC25]">
             Settings
           </h2>
-          <p className="text-muted-foreground">
-            Manage your account settings and set e-mail preferences.
-          </p>
         </div>
         <Separator className="my-6" />
         <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">

@@ -7,7 +7,14 @@ import { usePathname } from "next/navigation";
 const SearchBar = () => {
   const pathname = usePathname();
 
-  if (pathname === "/") return null;
+  if (
+    pathname === "/" ||
+    pathname === "/signin" ||
+    pathname === "/signup" ||
+    pathname === "/settings" ||
+    pathname === "/settings/account"
+  )
+    return null;
   return (
     <div className="w-full max-w-screen-sm flex gap-2">
       <Input placeholder="Search by tags" />
