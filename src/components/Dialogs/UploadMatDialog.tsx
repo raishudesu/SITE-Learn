@@ -17,7 +17,7 @@ const UploadMatDialog = () => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Upload material</DialogTitle>
+          <DialogTitle>Upload PDF material</DialogTitle>
           <DialogDescription>
             Make sure to include its references.
           </DialogDescription>
