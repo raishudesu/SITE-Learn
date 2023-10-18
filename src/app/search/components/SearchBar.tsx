@@ -16,7 +16,7 @@ const SearchBar = () => {
   )
     return null;
   return (
-    <div className="w-full max-w-screen-sm flex gap-2">
+    <div className="w-full max-w-screen-sm flex gap-2 px-3">
       <Input placeholder="Search by tags" />
       <SearchBtn />
     </div>
