@@ -8,7 +8,7 @@ import UserDropdown from "./UserDropdown";
 import ShowAuthBtns from "./ShowAuthBtns";
 import CreateBlogBtn from "@/app/blogs/components/CreateBlogBtn";
 import SearchBtn from "./SearchBtn";
-import HeaderNavMenu from "./HeaderNavMenu";
+import MenuChange from "./MenuChange";
 
 const Header = () => {
   return (
@@ -24,7 +24,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="hidden md:block">
-          <HeaderNavMenu />
+          <MenuChange />
         </div>
         <div className="flex gap-2 items-center">
           <SearchBtn />

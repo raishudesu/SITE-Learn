@@ -15,7 +15,7 @@ import {
 const SideNavMenu = () => {
   return (
     <NavigationMenu>
-      <NavigationMenuList className="flex flex-col">
+      <NavigationMenuList className="flex flex-col md:flex-row">
         <NavigationMenuItem>
           <Link href="/blogs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
