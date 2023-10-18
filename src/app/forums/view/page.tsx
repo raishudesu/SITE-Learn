@@ -19,7 +19,7 @@ import React, { useState } from "react";
 const ViewForum = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex flex-col gap-6 max-w-screen-md ">
+    <div className="flex flex-col gap-6 max-w-screen-sm ">
       <Card className="flex flex-col">
         <CardHeader>
           <CardTitle>What are your learning strategies?</CardTitle>

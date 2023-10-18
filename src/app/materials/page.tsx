@@ -8,7 +8,6 @@ const Materials = () => {
       <h1 className="text-2xl font-bold text-center text-[#16BC25]">
         Materials
       </h1>
-      <SearchBar />
       <UploadMatDialog />
       {Array.from({ length: 3 }, (_, index) => (
         <MaterialCard key={index} />

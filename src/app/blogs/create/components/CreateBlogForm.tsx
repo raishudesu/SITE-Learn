@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const CreateBlogForm = () => {
   return (
-    <Card className="w-full max-w-screen-md border-none shadow-md dark:shadow-slate-800">
+    <Card className="w-full max-w-screen-sm border-none shadow-md dark:shadow-slate-800">
       <CardHeader>
         <CardTitle className="text-[#16BC25]">Create blog</CardTitle>
       </CardHeader>

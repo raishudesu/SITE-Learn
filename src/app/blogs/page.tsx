@@ -1,11 +1,11 @@
-import SearchBar from "../search/components/SearchBar";
 import BlogCard from "./components/BlogCard";
+import CreateBlogBtn from "./components/CreateBlogBtn";
 
 const Blogs = () => {
   return (
     <>
       <h1 className="text-2xl font-bold text-[#16BC25]">Blogs</h1>
-      <SearchBar />
+      <CreateBlogBtn />
       {Array.from({ length: 3 }, (_, index) => (
         <BlogCard key={index} />
       ))}

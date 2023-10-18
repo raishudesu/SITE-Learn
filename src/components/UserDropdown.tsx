@@ -1,4 +1,4 @@
-import { PenSquare, Settings, User } from "lucide-react";
+import { Settings, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -13,7 +13,6 @@ import AvatarIcon from "./Avatar";
 import SignoutBtn from "./SignoutBtn";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
-import CreateBlogBtn from "@/app/blogs/components/CreateBlogBtn";
 
 const UserDropdown = async () => {
   const session = await getServerSession();
@@ -34,12 +33,6 @@ const UserDropdown = async () => {
             <Link href={"/dashboard"} className="w-full flex items-center">
               <User className="mr-2 h-4 w-4" />
               Dashboard
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href={"/blogs/create"} className="w-full flex items-center">
-              <PenSquare className="mr-2 h-4 w-4" />
-              Create blog
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem>

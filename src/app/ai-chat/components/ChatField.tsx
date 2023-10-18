@@ -31,7 +31,7 @@ const alignChat = (sender: string) => {
 
 const ChatField = () => {
   return (
-    <div className="w-full max-h-[80vh] max-w-screen-lg flex flex-col justify-between gap-6">
+    <div className="w-full max-h-[80vh] max-w-screen-xl flex flex-col justify-between gap-6">
       <div className="flex flex-col gap-3 overflow-y-scroll p-4 shadow-md dark:shadow-slate-800 rounded-lg">
         {chatData.map(({ content, sender }, index) => (
           <div key={index} className={alignChat(sender)}>

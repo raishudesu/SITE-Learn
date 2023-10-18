@@ -6,11 +6,7 @@ export const metadata: Metadata = {
 };
 
 const Create = () => {
-  return (
-    <>
-      <CreateBlogForm />
-    </>
-  );
+  return <CreateBlogForm />;
 };
 
 export default Create;

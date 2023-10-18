@@ -6,6 +6,7 @@ import { AuthProvider } from "./Providers";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SearchBar from "./search/components/SearchBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +33,10 @@ export default function RootLayout({
           <AuthProvider>
             <main className="min-h-screen overflow-hidden">
               <Header />
-              {children}
+              <div className="w-full mt-3 flex flex-col items-center">
+                <SearchBar />
+                {children}
+              </div>
               <Footer />
             </main>
           </AuthProvider>
