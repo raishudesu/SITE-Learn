@@ -14,9 +14,6 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
       <h1 className="text-2xl font-bold text-center text-[#16BC25]">
         Dashboard
       </h1>
-      <div className="w-full max-w-screen-sm">
-        <Separator />
-      </div>
       <ProfileCard />
       <div>
         <NavMenu
@@ -24,6 +21,9 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
           forumsLink="/dashboard/forums"
           materialsLink="/dashboard/materials"
         />
+      </div>
+      <div className="w-full max-w-screen-sm">
+        <Separator />
       </div>
       {children}
     </section>

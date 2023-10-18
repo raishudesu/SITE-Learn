@@ -1,6 +1,7 @@
 import NavMenu from "@/components/NavMenu";
 import { ReactNode } from "react";
 import SearchBar from "./components/SearchBar";
+import { Separator } from "@/components/ui/separator";
 
 const SearchLayout = ({ children }: { children: ReactNode }) => {
   return (
@@ -14,6 +15,9 @@ const SearchLayout = ({ children }: { children: ReactNode }) => {
           forumsLink="/search/forums"
           materialsLink="/search/materials"
         />
+      </div>
+      <div className="w-full max-w-screen-sm">
+        <Separator />
       </div>
       {children}
     </section>
