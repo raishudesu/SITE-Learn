@@ -10,7 +10,7 @@ import MenuChange from "./MenuChange";
 
 const Header = () => {
   return (
-    <header className="bg-background w-full flex justify-center shadow-md">
+    <header className="bg-background w-full flex justify-center shadow-md dark:shadow-slate-800">
       <div className="w-full max-w-screen-2xl flex justify-between items-center h-16 px-2">
         <div className="flex items-center gap-2">
           <Image src={Logo} alt="logo" className="max-w-[30px]" />
