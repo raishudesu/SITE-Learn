@@ -11,7 +11,7 @@ const AiChat = () => {
   return (
     <section className="w-full min-h-[80vh] flex flex-col items-center gap-6 p-3">
       <h1 className="text-2xl font-bold text-center text-[#16BC25]">
-        SITE GPT 3.5
+        Assistant
       </h1>
       <div className="w-full max-w-screen-xl">
         <Separator />

@@ -30,7 +30,8 @@ const HeaderNavMenu = () => {
                   >
                     <Image src={Logo} alt="logo" className="max-w-[30px]" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      SITE-Learn
+                      <span className="text-[#16BC25] font-bold">SITE</span>
+                      <span className="font-bold">X</span>
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       Enhance your learning development by collaborating with

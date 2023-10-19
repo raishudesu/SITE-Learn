@@ -18,7 +18,7 @@ const Header = () => {
             href={"/"}
             className="scroll-m-20 text-2xl font-bold tracking-tight transition-colors first:mt-0"
           >
-            <span className="text-[#16BC25]">SITE</span> Learn
+            <span className="text-[#16BC25]">SITE</span>X
           </Link>
         </div>
         <div className="hidden md:block">

@@ -22,7 +22,8 @@ const Sidebar = () => {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
-            <span className="text-[#16BC25]">SITE</span> Learn
+            <span className="text-[#16BC25] font-bold">SITE</span>
+            <span className="font-bold">X</span>
           </SheetTitle>
         </SheetHeader>
         <div className="mt-6 flex flex-col justify-center items-center gap-2">

@@ -11,8 +11,8 @@ import SearchBar from "./search/components/SearchBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SITE-Learn",
-  description: "Ask, Collaborate, and Learn",
+  title: "SITEX",
+  description: "Experience Technology",
 };
 
 export default function RootLayout({
@@ -32,14 +32,14 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AuthProvider>
+            <Header />
             <main className="min-h-screen overflow-hidden">
-              <Header />
               <div className="w-full mt-3 flex flex-col items-center">
                 <SearchBar />
                 {children}
               </div>
-              <Footer />
             </main>
+            <Footer />
           </AuthProvider>
           <Toaster />
         </ThemeProvider>

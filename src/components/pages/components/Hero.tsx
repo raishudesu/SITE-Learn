@@ -11,8 +11,8 @@ const Hero = () => {
             Ask, Collaborate and Learn.
           </span>
           <span className="text-lg md:text-xl max-w-4/5 text-muted-foreground">
-            Enhance your learning development by collaborating with other
-            aspiring students and professionals.
+            Enhance your learning development experience by collaborating with
+            other aspiring students and professionals.
           </span>
           <HeroBtns />
         </div>

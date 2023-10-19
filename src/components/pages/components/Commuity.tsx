@@ -13,16 +13,18 @@ const Community = () => {
         </div>
         <div className="flex flex-col gap-6 ">
           <span className="text-3xl lg:text-4xl font-bold">
-            Join the growing community.
+            Join the <span className="text-[#16BC25] font-bold">SITE</span>
+            <span className="font-bold">X</span> community.
           </span>
           <div className="text-muted-foreground max-w-7xl text-lg">
             <span className="text-md">
               Connect with fellow students, share your insights, and grow your
               skills in a collaborative space. At{" "}
-              <span className="text-[#16BC25] font-bold">SITE-Learn</span>,
-              we&apos;re more than just a community; we&apos;re a supportive
-              network of IT enthusiasts on a mission to learn and innovate
-              together. Join us today and be part of something bigger.
+              <span className="text-[#16BC25] font-bold">SITE</span>
+              <span className="font-bold">X</span>, we&apos;re more than just a
+              community; we&apos;re a supportive network of IT enthusiasts on a
+              mission to learn and innovate together. Join us today and be part
+              of something bigger.
             </span>
           </div>
         </div>
