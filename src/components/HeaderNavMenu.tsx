@@ -47,7 +47,7 @@ const HeaderNavMenu = () => {
                 Ask questions and collaborate in the community.
               </ListItem>
               <ListItem href="/ai-chat" title="AI Chat">
-                Converse with SITE Learn&apos;s AI Learning Assistant.
+                Converse with SITEX&apos;s AI Learning Assistant.
               </ListItem>
             </ul>
           </NavigationMenuContent>
