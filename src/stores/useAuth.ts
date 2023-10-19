@@ -2,6 +2,7 @@ export const signUp = async (
   name: string,
   email: string,
   isAdmin: boolean,
+  isVerified: boolean,
   pwd: string,
   confirmPwd: string
 ) => {
@@ -15,6 +16,7 @@ export const signUp = async (
         name,
         email,
         isAdmin,
+        isVerified,
         pwd,
         confirmPwd,
       }),

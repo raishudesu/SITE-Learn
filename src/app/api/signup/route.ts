@@ -8,7 +8,7 @@ export const POST = async (req: NextRequest) => {
   try {
     const data = signupSchema.parse(await req.json()); //MIDDLEWARE FOR VALIDATING REGISTER DATA
 
-    const { name, email, isAdmin, pwd, confirmPwd } = data;
+    const { name, email, isAdmin, isVerified, pwd, confirmPwd } = data;
 
     const hashedPwd = await bcrypt.hash(pwd, 10);
 
@@ -34,7 +34,15 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    await User.create({ name, email, isAdmin, password: hashedPwd });
+    const res = await User.create({
+      name,
+      email,
+      isAdmin,
+      isVerified,
+      password: hashedPwd,
+    });
+
+    console.log(res);
 
     return NextResponse.json(
       {

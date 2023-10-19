@@ -22,6 +22,10 @@ const userSchema = new Schema(
       type: Boolean,
       required: [true, "isAdmin property is required"],
     },
+    isVerified: {
+      type: Boolean,
+      required: [true, "isVerified property is required"],
+    },
     password: {
       type: String,
       required: [true, "Password is required"],

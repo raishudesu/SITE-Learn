@@ -34,6 +34,7 @@ const RegisterForm = () => {
       name: "",
       email: "", // Set your default email value here
       isAdmin: false,
+      isVerified: false,
       pwd: "", // Set your default password value here
       confirmPwd: "",
     },
@@ -58,14 +59,14 @@ const RegisterForm = () => {
     try {
       const { name, email, pwd, confirmPwd } = data;
 
-      const res = await signUp(name, email, false, pwd, confirmPwd);
+      const res = await signUp(name, email, false, false, pwd, confirmPwd);
       if (!res.success) {
         failedToast(res.msg);
         return;
       }
 
       successToast(res.msg);
-      router.replace("dashboard");
+      router.replace("/signin");
     } catch (error) {
       console.log(error);
     }
