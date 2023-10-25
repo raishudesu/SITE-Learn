@@ -66,7 +66,7 @@ export function ProfileForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-3"
+        className="flex flex-col gap-3 mt-3"
       >
         <FormField
           control={form.control}
@@ -160,7 +160,7 @@ export function ProfileForm() {
             Add URL
           </Button>
         </div>
-        <Button type="submit" className="self-end">
+        <Button type="submit" className="md:self-end">
           Update profile
         </Button>
       </form>

@@ -69,7 +69,7 @@ export function AccountForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-3"
+        className="flex flex-col gap-3 mt-3"
       >
         <FormField
           control={form.control}
