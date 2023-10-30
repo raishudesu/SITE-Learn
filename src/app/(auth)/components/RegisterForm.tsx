@@ -66,7 +66,7 @@ const RegisterForm = () => {
       }
 
       successToast(res.msg);
-      router.replace("/signin");
+      router.push("/signin");
     } catch (error) {
       console.log(error);
     }

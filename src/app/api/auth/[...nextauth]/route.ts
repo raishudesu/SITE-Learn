@@ -24,7 +24,6 @@ export const authOptions: NextAuthOptions = {
 
           const pwdMatched = await bcrypt.compare(pwd, user.password);
           if (!pwdMatched) throw new Error("wrong-pwd");
-          console.log(user);
           return user;
         } catch (error: any) {
           if (error.message === "non-existent")
